@@ -1,13 +1,18 @@
 import React, { useEffect, useState } from "react"
 import ShowTask from "./Components/showTask/showTask";
+import InformUserArea from "./Components/informUserArea/informUserArea";
 
-import './App.scss';
+// sass styles
+import "./styles/main.scss"
 
 function App() {
 
   return (
     <div className="App">
-      <ShowTask/>
+      <div className="appMainPageConatiner">
+        <InformUserArea/>
+        <ShowTask/>
+      </div>
     </div>
   );
 }
