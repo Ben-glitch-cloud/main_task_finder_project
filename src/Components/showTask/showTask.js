@@ -19,7 +19,15 @@ const [loading, setLoading] = useState(false)
     return(
             <div>
                 {data.map((task) => {
-                    return <p>{task['activity']}</p>
+                    return <div> 
+                            <p>Activity : {task['activity']}</p>
+                            <p>Accessibility : {task['accessibility']}</p>
+                            <p>Type : {task['type']}</p>
+                            <p>{task['participants']}</p>
+                            <p>Price {task['price']}</p>
+                            <p>Link : {task['link']}</p>
+                            <p>key : {task['key']}</p>
+                        </div>
                 })}
             </div>
         )
