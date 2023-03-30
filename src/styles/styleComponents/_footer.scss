@@ -14,21 +14,34 @@ footer{
 
         a{
             text-decoration: none;
-            color: black;
             display: flex;
             align-items: center;
             justify-content: center;
             column-gap: 10px;
         }
 
-        .gitHub{
+        #github{
             color: black;
-
             &:hover{
-                p{
-                    color: #00008B;
-                }
+                color: #8155BA;
             }
         }
+
+        #api{
+            color: black;
+            &:hover{
+                color: #00008B;
+            }
+        }
+
+        #fiverr{
+            color: black;
+            &:hover{
+                color: #76B947;
+            }
+        }
+
+
+        
     }
 }

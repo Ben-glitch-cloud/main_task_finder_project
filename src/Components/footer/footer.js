@@ -6,16 +6,16 @@ function Footer(){
         <footer>
             <h3>Contact</h3>
             <div className="footerContaner">
-               <a href="">
-                    <AiFillGithub size={40}  className='icon gitHub'/>
+               <a href=""  id='github'>
+                    <AiFillGithub size={40}  className='icon'/>
                     <p>Github</p>
                </a>
-               <a href="">
-                    <AiFillApi size={40} className='icon api'/>
+               <a href="" id='api'>
+                    <AiFillApi size={40} className='icon'/>
                     <p>API</p>
                </a>
-               <a href="">
-                    <TbBrandFiverr size={40} className='icon fiverr'/>
+               <a href="" id='fiverr'>
+                    <TbBrandFiverr size={40} className='icon'/>
                     <p>Fiverr</p>
                </a>
             </div>

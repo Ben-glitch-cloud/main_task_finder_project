@@ -92,7 +92,7 @@ function FormTask(){
 
                         <form>
                             <label>key</label>
-                            <input placeholder="1000000 - 999999"></input>
+                            <input type="number" placeholder="1000000 - 999999"></input>
                         </form>
                     </div>
                 </div>
