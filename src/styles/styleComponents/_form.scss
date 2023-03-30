@@ -1,0 +1,58 @@
+.formContainer{
+
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+
+
+    .formParts{
+
+    display: flex;
+    justify-content: space-between;
+    width: 85%;
+
+    form{
+
+        display: flex;
+        height: 45px;
+        padding-right: 10px;
+
+        label{
+            border-top: black 2px solid;
+            border-bottom: black 2px solid;
+            border-left: black 2px solid;
+            border-right: none;
+            border-radius: 25px 0px 0px 25px;
+            display: flex;
+            align-items: center;
+            padding: 0px 20px;
+            font-size: 16px;
+        }
+
+        select{
+            border-top: black 2px solid;
+            border-bottom: black 2px solid;
+            border-left: none;
+            border-right: 2px solid black;
+            display: flex;
+            align-items: center;
+            border-radius: 0px 25px 25px 0px;
+            padding: 0px 0px;
+            font-size: 16px;
+        }
+
+        input{
+            border-top: black 2px solid;
+            border-bottom: black 2px solid;
+            border-left: none;
+            border-right: 2px solid black;
+            display: flex;
+            align-items: center;
+            border-radius: 0px 25px 25px 0px;
+            padding: 0px 0px;
+            font-size: 16px;
+        }
+        
+    }
+}
+}
