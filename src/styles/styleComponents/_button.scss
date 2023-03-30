@@ -1,0 +1,15 @@
+.findBtutton{
+    font-size: 26px;
+    width: 250px;
+    height: 50px;
+    border-radius: 25px;
+    border: none;
+    color: white;
+    font-weight: 550;
+    background: linear-gradient(rgba(199, 72, 220, 1), rgba(34, 85, 216, 1));
+
+
+    &:hover{
+        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    }
+}

@@ -1,4 +1,59 @@
 .firstAppItemArea{
-    width: 50%;
+    width: 45%;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    margin: 0px;
+    padding: 0px;
+
+    .informationContaner{
+        margin: 30px 30px;
+
+        h1{
+            font-size: 72px;
+            font-weight: 500;
+            margin: 0px;
+            padding: 0px;
+        }
+
+        h2{
+            font-size: 40px;
+            margin: 10px 0px;
+            font-weight: 500;
+        }
+
+        p{
+            font-size: 24px;
+            width: 85%;
+            padding: 10px 0px;
+        }
+
+        form{
+
+            display: flex;
+            height: 45px;
+            padding-right: 10px;
+
+            label{
+                border-top: black 2px solid;
+                border-bottom: black 2px solid;
+                border-left: black 2px solid;
+                border-right: none;
+                border-radius: 25px 0px 0px 25px;
+                display: flex;
+                align-items: center;
+                padding: 0px 20px;
+            }
+
+            select{
+                border-top: black 2px solid;
+                border-bottom: black 2px solid;
+                border-left: none;
+                border-right: 2px solid black;
+                display: flex;
+                align-items: center;
+                border-radius: 0px 25px 25px 0px;
+                padding: 0px 0px;
+            }
+            
+        }
+    }
 }
