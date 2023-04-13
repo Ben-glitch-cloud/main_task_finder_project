@@ -1,6 +1,8 @@
 .secondAppItemArea{
     display: flex;
+    flex-direction: column;
     flex-grow: 1;
+    row-gap: 20px;
     justify-content: center;
     align-items: center;
 }

@@ -2,12 +2,12 @@ import React, { useEffect, useState } from "react"
 
 function FormTask(props){
 
-    const [maxPrice, setMaxPrice] = useState({"maxPrice": null})
-    const [minPrice, setMinPrice] = useState({"minPrice": null})
-    const [participants, setParticipants] = useState({"participants": null})
-    const [accessibility, setAccessibility] = useState({"accessibility": null})
-    const [key, setKey] = useState({"key": null})
-    const [type, setType] = useState({'type': null})
+    const [maxPrice, setMaxPrice] = useState({"maxPrice": 'null'})
+    const [minPrice, setMinPrice] = useState({"minPrice": 'null'})
+    const [participants, setParticipants] = useState({"participants": 'null'})
+    const [accessibility, setAccessibility] = useState({"accessibility": 'null'})
+    const [key, setKey] = useState({"key": 'null'})
+    const [type, setType] = useState({'type': 'null'})
 
     function getFormFilterData(e){
       switch (e.target.name) {
@@ -72,7 +72,7 @@ function FormTask(props){
                         <form>
                             <label>Accessibility</label>
                             <select name="accessibility" onChange={getFormFilterData}>
-                                <option>Null</option>
+                                <option value="null">Null</option>
                                 <option>0.1</option>
                                 <option>0.2</option>
                                 <option>0.3</option>
@@ -90,8 +90,8 @@ function FormTask(props){
                     <div className="formParts">
                         <form>
                             <label>Min Price</label>
-                            <select name="Min Price" onChange={getFormFilterMinPrice}>
-                                <option>Null</option>
+                            <select name="Min Price" id="min" onChange={getFormFilterMinPrice}>
+                                <option value="null">Null</option>
                                 <option>0.1</option>
                                 <option>0.2</option>
                                 <option>0.3</option>
@@ -107,8 +107,8 @@ function FormTask(props){
 
                         <form>
                             <label>Max Price</label>
-                            <select name="Max Price" onChange={getFormFilterMaxPrice}>
-                                <option>Null</option>
+                            <select id="max" name="Max Price" onChange={getFormFilterMaxPrice}>
+                                <option value="null">Null</option>
                                 <option>0.1</option>
                                 <option>0.2</option>
                                 <option>0.3</option>
@@ -127,7 +127,7 @@ function FormTask(props){
                         <form>
                             <label>Type</label>
                             <select name="type" onChange={getFormFilterData}>
-                                <option>Null</option>
+                                <option value="null">Null</option>
                                 <option>education</option>
                                 <option>recreational</option>
                                 <option>social</option>
