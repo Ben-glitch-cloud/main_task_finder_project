@@ -44,16 +44,16 @@ function ShowTask(props){
   
     return(
            <div className="secondAppItemArea"> 
-            {data.length !== 0 ?
-              data.map((task) => {
+              {data.map((task) => {
                 return <div className="activityContainer"> 
+                        {task['activity'] !== undefined ?
                         <div className="activityItem">
                           <h2>{task['activity']}</h2>
                           <div className="activityItemBoxOne">
                             {task['accessibility'] >= 0.8 ? <p>Very Accessible</p> : null}
                             {task['accessibility'] <= 0.7 && task['accessibility'] >= 0.4  ? <p>Moderately Accessible</p> : null}
                             {task['accessibility'] <= 0.3 && task['accessibility'] >= 0.2  ? <p>Not Very Accessible</p> : null}
-                            {task['accessibility'] <= 0.19 && task['accessibility'] >= 0 ? <p>No Accessibility</p> : null}
+                            {task['accessibility'] <= 0.19 && task['accessibility'] >= 0 ? <p>Not Considered Accessible</p> : null}
                             <p>Type : {task['type']}</p>
                           </div>
                           <div className="activityItemBoxOne">
@@ -64,11 +64,15 @@ function ShowTask(props){
                           {task['link'] !== undefined ? <a target="_blank" href={task['link']}>Link Found</a> : <p>No Link Found</p>}
                             <p>Key : {task['key']}</p>
                           </div>
-                          
                         </div>
+                        : 
+                          <div className="activityItem">
+                            <p id="error">Sorry, No Activity Found</p>
+                          </div>
+                        }
                   </div>
-              })
-              : null }
+              })}
+
               <button className="findBtutton" onClick={findTaskNow}>Find Activity</button>
               
            </div>
