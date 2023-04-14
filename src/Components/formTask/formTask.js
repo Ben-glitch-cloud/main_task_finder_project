@@ -2,13 +2,13 @@ import React, { useEffect, useState } from "react"
 
 function FormTask(props){
 
-    const [maxPrice, setMaxPrice] = useState({"maxPrice": 'null'})
-    const [minPrice, setMinPrice] = useState({"minPrice": 'null'}) 
+    const [maxPrice, setMaxPrice] = useState({"maxprice": 'null'})
+    const [minPrice, setMinPrice] = useState({"minprice": 'null'}) 
     const [keyError, setKeyError] = useState(false)
     const [priceError, setPriceError] = useState(false)
     const [participants, setParticipants] = useState({"participants": 'null'})
     const [accessibility, setAccessibility] = useState({"accessibility": 'null'})
-    const [key, setKey] = useState({"key": 'null'})
+    const [keyValue, setValueKey] = useState('null')
     const [type, setType] = useState({'type': 'null'})
 
     function getFormFilterData(e){
@@ -20,7 +20,7 @@ function FormTask(props){
             setAccessibility({"accessibility": e.target.value})
             break;
         case "key":
-            setKey({"key": null})
+            setValueKey({"key": 'null'})
             // chnage this later
             break;
         case "type":
@@ -32,9 +32,9 @@ function FormTask(props){
     }
 
     function getFormActivityKey(e){
-        console.log(key)
-        setKey((key) => key['key'] = e.target.value)
-        if(Number(key) < 1000000 && Number(key) > 999999){
+        setValueKey((keyValue) => keyValue = e.target.value)
+        console.log(keyValue)
+        if(Number(keyValue) < 1000000 && Number(keyValue) > 999999){
             setKeyError(true)
             console.log('wrong')
         } else {
@@ -43,16 +43,16 @@ function FormTask(props){
     }
 
     useEffect(() => {
-        props.GetFilterData([maxPrice, minPrice, participants, accessibility, key, type])
-    }, [maxPrice, minPrice, participants, accessibility, key, type])
+        props.GetFilterData([maxPrice, minPrice, participants, accessibility, {'key': keyValue}, type])
+    }, [maxPrice, minPrice, participants, accessibility, type])
 
     function getFormFilterMinPrice(e){
-        if((maxPrice['maxPrice'] === 'null' || Number(e.target.value) < maxPrice['maxPrice']) && e.target.value !== "Null"){
+        if((maxPrice['maxprice'] === 'null' || Number(e.target.value) < maxPrice['maxprice']) && e.target.value !== "Null"){
             setPriceError(false)
-            setMinPrice({"minPrice": Number(e.target.value)})
+            setMinPrice({"minprice": Number(e.target.value)})
         } else if(e.target.value === "Null"){
             setPriceError(false)
-            setMinPrice({"minPrice": 'null'})
+            setMinPrice({"minprice": 'null'})
         } else {
             setPriceError(true) 
             console.log('min price must be smaller than max price')
@@ -60,12 +60,12 @@ function FormTask(props){
     }
 
     function getFormFilterMaxPrice(e){ 
-        if((minPrice['minPrice'] === 'null' || Number(e.target.value) > minPrice['minPrice']) && e.target.value !== "Null"){
+        if((minPrice['minprice'] === 'null' || Number(e.target.value) > minPrice['minprice']) && e.target.value !== "Null"){
             setPriceError(false)
-            setMaxPrice({"maxPrice": Number(e.target.value)})
+            setMaxPrice({"maxprice": Number(e.target.value)})
         } else if(e.target.value === "Null"){
             setPriceError(false)
-            setMaxPrice({"maxPrice": 'null'})
+            setMaxPrice({"mapPrice": 'null'})
         } else {
             setPriceError(true)
             console.log(maxPrice, minPrice)
@@ -163,11 +163,13 @@ function FormTask(props){
 
                         <form>
                             <label>key</label>
-                            <input name="key" onChange={getFormActivityKey} type="number" value={key} placeholder="1000000 - 999999"></input>
+                            <input name="key" onChange={getFormActivityKey} type="number" value={keyValue} placeholder="1000000 - 999999"></input>
                         </form>
                     </div>
-                    {keyError ? <p>Error</p> : null}
-                    {priceError ? <p>Minimum price must be larger than Maximum</p> : null}
+                    <div className="errorContainer">
+                        {keyError ? <p id="priceMinError">Key not valid</p> : null}
+                        {priceError ? <p id="priceMinError">Minimum price must be smaller than Maximum price</p> : null}
+                    </div>
                 </div>
     )
 }

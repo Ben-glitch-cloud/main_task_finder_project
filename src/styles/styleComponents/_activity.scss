@@ -1,37 +1,80 @@
-.activityContainer{
-    width: 100%;
+.loadingActivityArea{
+
     display: flex;
     justify-content: center;
+    flex-direction: column;
+    row-gap: 15px;
+    align-items: center;
 
-    .activityItem{
-        width: 400px;
+    .activityContainer{
+        width: 100%;
         display: flex;
-        flex-direction: column;
-        row-gap: 10px;
-        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-        border-radius: 10px;
-        padding: 15px;
+        justify-content: center;
 
-        .activityItemBoxOne{
+        .activityItem{
+            width: 400px;
             display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-        }
+            flex-direction: column;
+            row-gap: 10px;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            border-radius: 10px;
+            padding: 15px;
 
-        #error{
-            text-align: center;
-        }
+            .activityItemBoxOne{
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+            }
 
-        h2{
-            padding: 0px;
-            margin: 0px;
-            font-size: 24px;
-        }
+            #error{
+                text-align: center;
+            }
 
-        p{
-            margin: 0px;
-            padding: 0px;
+            h2{
+                padding: 0px;
+                margin: 0px;
+                font-size: 24px;
+            }
+
+            p{
+                margin: 0px;
+                padding: 0px;
+            }
         }
+        
     }
-    
+
+}
+
+.loadingMessage{
+
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    width: 400px;
+    border-radius: 10px;
+    text-align: center;
+    transition-timing-function: ease-in;
+    transition-duration: infinite;
+    transition: 0.2s;
+    transform: scale(100%);
+    animation: 1s ease-in-out infinite pulse;
+
+    @keyframes pulse {
+        0% {
+          transform: scale(100%);
+        }
+
+        50% {
+            transform: scale(105%);
+        }
+        
+        100% {
+          transform: scale(100%);
+        }
+      }
+
+    p{
+        font-size: 24px;
+        padding: 0px;
+        margin: 15px 0px;
+    }
 }
